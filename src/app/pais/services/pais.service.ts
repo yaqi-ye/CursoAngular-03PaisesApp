@@ -31,7 +31,7 @@ export class PaisService {
   buscarRegion( region: string ): Observable<Country[]>{
 
     const params = new HttpParams()
-          .set( 'fields', 'name,capital,alpha2code,flag,population');
+          .set( 'fields','name,capital,alpha2code,flags,population');
 
     const url = `${ this.apiUrl }/region/${ region }`;
     return this.http.get<Country[]>( url, { params } )
